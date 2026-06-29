@@ -1,0 +1,22 @@
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
+*.ipch
+*.suo
+*.user
+
+# Build output
+Debug/
+Release/
+x64/
+x86/
+
+# Intermediate files
+*.obj
+*.pch
+*.pdb
+*.ilk
+*.idb

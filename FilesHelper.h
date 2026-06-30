@@ -1,13 +1,10 @@
 
 #pragma once
 #include <iostream>
-#include <vector>
 #include <fstream>
 #include <string>
 #include "Client.h"
 #include "Employee.h"
-#include "Admin.h"
-#include "Parser.h"
 using namespace std;
 
 class FilesHelper {
@@ -36,7 +33,6 @@ public:
             file << c.toString() << endl;
             file.close();
         }
-        saveLast("lastClientID.txt", c.GetClientId());
     }
 
     static void saveEmployee(const string& fileName, const string& lastIdFile, const Employee& e) {
@@ -45,53 +41,34 @@ public:
             file << e.toString() << endl;
             file.close();
         }
-        saveLast(lastIdFile, e.GetEmployeeId());
+        saveLast(lastIdFile, e.getId());
     }
 
-    static void saveAdmin(const Admin& a)
-    {
-        ofstream file("Admins.txt", ios::app);
-
-        if (file.is_open())
-        {
-            file << a.toString() << endl;
-            file.close();
-        }
-
-        saveLast("LastAdminId.txt", a.GetEmployeeId());
-    }
-
-    static vector<Client> getClients() {
-        vector<Client> clients;
+    static void getClients() {
         ifstream file("Clients.txt");
         string line;
         while (getline(file, line)) {
-           clients.push_back(Parser::parseToClient(line));
+            cout << line << endl;
         }
         file.close();
-        return clients;
     }
 
-    static vector<Employee> getEmployees() {
-        vector<Employee> employees;
+    static void getEmployees() {
         ifstream file("Employees.txt");
         string line;
         while (getline(file, line)) {
-            employees.push_back(Parser::parseToEmployee(line));
+            cout << line << endl;
         }
         file.close();
-        return employees;
     }
 
-    static vector<Admin> getAdmins() {
-        vector<Admin> admins;
+    static void getAdmins() {
         ifstream file("Admins.txt");
         string line;
         while (getline(file, line)) {
-            admins. push_back(Parser::parseToAdmin(line));
+            cout << line << endl;
         }
         file.close();
-        return admins;
     }
 
     static void clearFile(const string& fileName, const string& lastIdFile) {

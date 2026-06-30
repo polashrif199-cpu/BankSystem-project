@@ -21,13 +21,22 @@ public:
 	void SetClientBalance(double balance);
 
 	//getters
-	int GetClientId();
+	int GetClientId()const;
 	
 	string GetClientName();
 	
 	string GetClientPassword();
 	
 	double getClientBalance();
+	
+	//tostring
+	string toString() const
+	{
+		return to_string(id) + "&" +
+			name + "&" +
+			password + "&" +
+			to_string(balance);
+	}
 
 	//deposit, withdraw, transfer, check balance
 	void deposit(double amount);

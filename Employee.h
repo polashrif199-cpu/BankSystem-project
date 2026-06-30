@@ -20,7 +20,7 @@ public:
     void SetEmployeePassword(string password);
     void SetEmployeeSalary(double salary);
 
-    int GetEmployeeId();
+    int GetEmployeeId()const;
     string GetEmployeeName();
     string GetEmployeePassword();
     double GetEmployeeSalary();
@@ -31,6 +31,15 @@ public:
     Client* searchClient(int cid);
     void listClients();
     void editClient(int cid, string name, string password, double balance);
+
+    //tostring
+    string toString()const
+    {
+        return to_string(id) + "&" +
+            name + "&" +
+            password + "&" +
+            to_string(salary);
+    }
 
     void raiseSalary(double percent);
 

@@ -21,7 +21,7 @@ void Employee::SetEmployeeSalary(double salary) {
 }
 
 
-int Employee::GetEmployeeId() {
+int Employee::GetEmployeeId()const {
     return id;
 }
 

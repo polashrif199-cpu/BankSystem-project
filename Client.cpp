@@ -38,9 +38,9 @@ void Client::SetClientBalance(double balance)
 }
 
 //getters
-int Client::GetClientId()
+int Client::GetClientId()const 
 {
-	return getId();
+	return id;
 }
 
 string Client::GetClientName()

@@ -44,4 +44,4 @@ public:
 
     // Display
     void display() override;
-}
+};

@@ -3,6 +3,7 @@
 #include "Admin.h"
 #include "Employee.h"
 #include "Client.h"
+#include "Screens.h"
 
 using namespace std;
 
@@ -88,5 +89,6 @@ int main()
     cout << "\nAfter editEmployee():\n";
     admin.listEmployee();
 
+    Screens::runApp();
     return 0;
 }
